@@ -18,8 +18,8 @@ data class MagicCirle(val maxX: Int, val maxY: Int){
             cx.roundToInt()!in 0..maxX->dx =-dx
             cy.roundToInt()!in 0..maxY->dy =-dy
         }
-        cx+ DELTA
-        cy+ DELTA
+        cx+= dx
+        cy+= dy
     }
 
 }
