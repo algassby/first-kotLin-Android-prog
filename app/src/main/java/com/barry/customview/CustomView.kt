@@ -17,10 +17,16 @@ class CustomView : View {
     private var mPaint = Paint()
 
     private fun init(){
+        mPaint = Paint().apply {
+            style = Paint.Style.STROKE
+            strokeWidth = 10F
+
+
+        }
+        /*
         mCircle = MagicCirle(50 ,50)
         mPaint = Paint()
-
-        mPaint.color = mCircle.mColor
+        mPaint.color = mCircle.mColor*/
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bot: Int) {
@@ -30,9 +36,15 @@ class CustomView : View {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         //canvas?.drawCircle(50F, 50F, 40F, Paint())
-        mCircle.move()
+        //mCircle.move()
         //canvas?.drawCircle(mCircle.cx, mCircle.cy, mCircle.rad, Paint())
-        canvas?.drawCircle(mCircle.cx, mCircle.cy, mCircle.rad, mPaint)
+        //canvas?.drawCircle(mCircle.cx, mCircle.cy, mCircle.rad, mPaint)
+        with(mCircle){
+            move()
+            mPaint.color = mColor;
+            canvas?.drawCircle(cx, cy, rad, mPaint)
+        }
+
         invalidate()
     }
 
