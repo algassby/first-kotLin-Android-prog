@@ -9,7 +9,7 @@ data class MagicCirle(val maxX: Int, val maxY: Int){
     var cx = 50F
     var cy = 50F
     val rad = 40F
-    val mColor = App.sColors[1]
+    val mColor = App.sColors[App.sColors.indices.random()]
     companion object{
         val DELTA = 9;
     }
